@@ -2,8 +2,8 @@ diag_log "ADF RPT: Init - executing init_client.sqf"; // Reporting. Do NOT edit/
 
 player createDiarySubject ["Wolfpack Log","Wolfpack Log"];
 player createDiaryRecord ["Wolfpack Log",["Wolf Communications Log","
-<br/><br/><font color='#6c7169'>The Wolfpack Log is a logbook of all operational radio comms between Wolf and TOC<br/>
-The messages are logged once displayed on screen. All messages are time-stamped and saved in order of appearance.</font>
+<br/><br/><font color='#6c7169'>Le Wolfpack Log est le carnet de toutes les coms radio entre WOLF et le TOC<br/>
+Les messages sont logués une fois portés à l écran. Tous les messages sont horo datés et sauvegardès dans l ordre d apparition.</font>
 <br/><br/>
 "]];
 
@@ -35,45 +35,45 @@ while {time < 25} do {
 
 if (!ADF_debug) then {waitUntil {ADF_missionInit}; sleep 5};
 
-["TOC","JSOC TOC","JSOC TOC: Net. Radio check. Over."] call ADF_fnc_MessageParser; sleep 9;
-["WOLF","","Wolf: This is Wolf. Lima Charlie. Out."] call ADF_fnc_MessageParser; sleep 12;
-["TOC","JSOC TOC","JSOC TOC: Commander, call signs are as follows:<br/><br/>TOC: Big Foot. Break.<br />Your call sign: Phoenix. Out."] call ADF_fnc_MessageParser; sleep 30;
-["TOC","JSOC TOC","Big Foot: Phoenix, make your way to the RV location. Break.<br/><br/>At the RV you'll meet our local man on the ground, Nikos Fotopoulos. How copy?"] call ADF_fnc_MessageParser; sleep 12;
-["WOLF","","Phoenix: Solid copy Big Foot, head to te RV and meet up with local contact. Out."] call ADF_fnc_MessageParser; sleep 40;
-["TOC","JSOC TOC","Big Foot: Phoenix: Don't mind the vessel to your north-west. Break.<br/>It is a Russian Signals intelligence Trawler. Break.<br/>We are jamming its comms. It should be of no concern to your op. Out."] call ADF_fnc_MessageParser;
+["TOC","JSOC TOC","JSOC TOC: Net. Contrôle radio. Parlez."] call ADF_fnc_MessageParser; sleep 9;
+["WOLF","","Wolf: WOLF Parlez. Fort et clair. Parlez."] call ADF_fnc_MessageParser; sleep 12;
+["TOC","JSOC TOC","JSOC TOC: Commandant, les identifiants sont les suivants :<br/><br/>TOC: Big foot. Break.<br />Votre identifiant: Phoenix. Terminé."] call ADF_fnc_MessageParser; sleep 30;
+["TOC","JSOC TOC","Big Foot: Phoenix, dirigez vous vers le point RV. Break.<br/><br/>A RV vous rencontrerez notre contact local, Nikos Fotopoulos. Collationnez !"] call ADF_fnc_MessageParser; sleep 12;
+["WOLF","","Phoenix: Reçu Big Foot, se rendre sur RV et rencontrer contact local. Terminé."] call ADF_fnc_MessageParser; sleep 40;
+["TOC","JSOC TOC","Big Foot: Phoenix: Ne vous inquitez pas du bateau sur votre nord ouest. Break.<br/> C est un chalutier espion sovietique. Break.<br/>Nous avons brouillé ses coms. Il ne devrait pas perturber votre opération. Terminé."] call ADF_fnc_MessageParser;
 
 ADF_fnc_Retaliate = {
 	sleep 120;		
-	["TOC","JSOC TOC","Big Foot: Phoenix, priority traffic."] call ADF_fnc_MessageParser; sleep 9;
-	["WOLF","","Phoenix: Send traffic."] call ADF_fnc_MessageParser; sleep 9;
-	["TOC","JSOC TOC","Big Foot: SatNav reports a Kajman gunship just took off from Abdera Heliport and is heading towards Frini. ETA 3 Mikes. Over."] call ADF_fnc_MessageParser; sleep 14;
-	["WOLF","","Phoenix: Solid copy. Out."] call ADF_fnc_MessageParser; sleep 12;
+	["TOC","JSOC TOC","Big Foot: Phoenix, message prioritaire."] call ADF_fnc_MessageParser; sleep 9;
+	["WOLF","","Phoenix: Envoyez message."] call ADF_fnc_MessageParser; sleep 9;
+	["TOC","JSOC TOC","Big Foot: SatNav nous informe qu un hélico KAJMAN vient de décoller de l'héliport d'Abdera et se dirige vers FRINI. ETA 3 Mikes. Terminé."] call ADF_fnc_MessageParser; sleep 14;
+	["WOLF","","Phoenix: Suivi. Terminé."] call ADF_fnc_MessageParser; sleep 12;
 };
 
 ADF_msg_kallaziz = {
-	["WOLF","","Phoenix: Big Foot, this is Phoenix. Message over."] call ADF_fnc_MessageParser; sleep 11;
-	["TOC","JSOC TOC","Big Foot: Ready to copy Phoenix."] call ADF_fnc_MessageParser; sleep 10;
-	["WOLF","","Phoenix: Big Foot, package is bagged. How copy?"] call ADF_fnc_MessageParser; sleep 11;
-	["TOC","JSOC TOC","Big Foot: Wait. Out."] call ADF_fnc_MessageParser; sleep 22;
-	["TOC","JSOC TOC","Big Foot: Bagged package confirmed. Break/<br /><br />Proceed to Victor for exfil. How copy?"] call ADF_fnc_MessageParser; sleep 14;
-	["WOLF","","Phoenix: Solid copy. Victor for our ride home. out."] call ADF_fnc_MessageParser; 
+	["WOLF","","Phoenix: Big Foot,  de Phoenix. Message à transmettre."] call ADF_fnc_MessageParser; sleep 11;
+	["TOC","JSOC TOC","Big Foot: Prêt transmettez Phoenix."] call ADF_fnc_MessageParser; sleep 10;
+	["WOLF","","Phoenix: Big Foot, le colis est empaqueté. Collationnez"] call ADF_fnc_MessageParser; sleep 11;
+	["TOC","JSOC TOC","Big Foot: Attendez. Terminé."] call ADF_fnc_MessageParser; sleep 22;
+	["TOC","JSOC TOC","Big Foot: Colis empaqueté confirmé. Urgent/<br /><br />Procedez exfiltration vers Victor. Collationnez !"] call ADF_fnc_MessageParser; sleep 14;
+	["WOLF","","Phoenix: Reçu. Victor pour notre retour à la maison. Terminé."] call ADF_fnc_MessageParser; 
 };
 
 ADF_msg_rv = {
 	if (rvDone) exitWith {};
-	["WOLF","","Phoenix: Big Foot, this is Phoenix. We are at the RV. How copy?"] call ADF_fnc_MessageParser; sleep 7;
-	["TOC","JSOC TOC","Big Foot: Copy Phoenix. Your contact should be at the Church. Out."] call ADF_fnc_MessageParser;
+	["WOLF","","Phoenix: Big Foot de Phoenix. Nous sommes à RV."] call ADF_fnc_MessageParser; sleep 7;
+	["TOC","JSOC TOC","Big Foot: Reçu Phoenix. Votre contact devrait être dans l église. Terminé."] call ADF_fnc_MessageParser;
 };
 
 ADF_msg_nikos = {
 	rvDone = true;
-	["NONE","Nikos Fotopoulos","Phoenix, welcome to Altis. My name is Nikos Fotopoulos. I am your contact person on Altis."] call ADF_fnc_MessageParser; sleep 11;
-	["NONE","Nikos Fotopoulos","I have just been in touch with Big Foot for a sitrep. Your mission is as follows:<br/><br/>1. Covertly make your way towards Frini M.O.B.<br/>2. Observe the base and wait for the package to arrive by helicopter.<br/>3. The package is Maj. F. Kallaziz, head of the CSAT Intelligence Services. Eliminate the package.<br/>4. Covertly make your way to the exfil location at Cap. Agrios where you'll board a patrol boat.<br/><br/>I have taken the liberty to mark the positions on your map. Godspeed Commander."] call ADF_fnc_MessageParser; sleep 24;
-	["WOLF","","Phoenix: Thanks Nikos."] call ADF_fnc_MessageParser; sleep 5;
-	["WOLF","","Phoenix: Big Foot, message. Over."] call ADF_fnc_MessageParser; sleep 7;
-	["TOC","JSOC TOC","Big Foot: Send traffic."] call ADF_fnc_MessageParser; sleep 8;
-	["WOLF","","Phoenix: Got briefed by our contact. Break.</br>We're oscar mike for tasking. Over."] call ADF_fnc_MessageParser; sleep 5;
-	["TOC","JSOC TOC","Big Foot: Copy Big Foot. No additional inel at this time. Out."] call ADF_fnc_MessageParser; sleep 8;
+	["NONE","Nikos Fotopoulos","Phoenix, bienvenue sur Altis. Mon nom est Nikos Fotopoulos. Je suis votre contact sur Altis."] call ADF_fnc_MessageParser; sleep 11;
+	["NONE","Nikos Fotopoulos","Je viens juste d'être en contact avec Big Foot pour un bulletin. Votre mission est la suivante:<br/><br/>1. Dirigea vous discretement vers la base de Frini<br/>2. Observez la base et attendez que le colis arrive par hélico.<br/>3. Le colis est le Maj. F. Kallaziz, la tête du CSAT Intelligence Services. Eliminez le colis.<br/>4. Puis rendez vous discretement au point d´extiltration Cap. Agrios où vous embarquerez dans un bateau patrouilleur.<br/><br/>J ai pris la liberté de marquer la position sur votre carte.Bonne chance commandant."] call ADF_fnc_MessageParser; sleep 24;
+	["WOLF","","Phoenix: Merci Nikos."] call ADF_fnc_MessageParser; sleep 5;
+	["WOLF","","Phoenix: Big Foot, message. Terminé."] call ADF_fnc_MessageParser; sleep 7;
+	["TOC","JSOC TOC","Big Foot: Envoyez message."] call ADF_fnc_MessageParser; sleep 8;
+	["WOLF","","Phoenix: Avons été briefé par notre contact. Break.</br>Sommes prêts pour exécuter notre mission. Terminé."] call ADF_fnc_MessageParser; sleep 5;
+	["TOC","JSOC TOC","Big Foot: Reçu Phoenix. Pas d´info complémentaire à rajouter pour le moment. Terminé."] call ADF_fnc_MessageParser; sleep 8;
 };
 
 ADF_fnc_kallazizActive = {
