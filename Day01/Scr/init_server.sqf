@@ -135,7 +135,7 @@ ADF_fnc_exfil = {
 	_wp1 setWaypointBehaviour "COMBAT";
 	_wp1 setWaypointSpeed "FULL";
 	_wp1 setWaypointCompletionRadius 30;
-	_wp1 setWaypointStatements ["true", "if (hasInterface) then {['NONE','Neptune','Phoenix, this is Neptune. Get ready. ETA 2 mikes.'] call ADF_fnc_MessageParser};"];
+	_wp1 setWaypointStatements ["true", "if (hasInterface) then {['NONE','Neptune','Phoenix, c'est Neptune. Soyez prêts. ETA 2 mikes.'] call ADF_fnc_MessageParser};"];
 		
 	_wp2 = _c addWaypoint [getMarkerPos "nep1c", 0];
 	_wp2 setWaypointType "MOVE";
@@ -148,7 +148,7 @@ ADF_fnc_exfil = {
 	_wp3 setWaypointBehaviour "SAFE";
 	_wp3 setWaypointSpeed "LIMITED";
 	_wp1 setWaypointCompletionRadius 0;
-	_wp3 setWaypointStatements ["true", "if (hasInterface) then {['NONE','Neptune','Neptune: Great to see you Commander. Hop on. We will take you guys home.'] call ADF_fnc_MessageParser};"];	
+	_wp3 setWaypointStatements ["true", "if (hasInterface) then {['NONE','Neptune','Neptune: Heureux de vous voir commandant. Embarquez !. On vous ramène à la maison.'] call ADF_fnc_MessageParser};"];	
 	waitUntil {(currentWaypoint (_wp3 select 0)) > (_wp3 select 1)};
 	{_x setFuel 0} forEach [vNeptune1,vNeptune2];
 
@@ -158,7 +158,7 @@ ADF_fnc_exfil = {
 
 [] spawn {
 	waitUntil {sleep 5; time > 30};
-	"Notice: All communication (messages) are logged once displayed on screen. You can access the 'WOLFPACK LOG' from the map menu. All messages are time-stamped and saved in order of appearance." remoteExec ["systemChat",-2,false];
+	"Note: Toutes les coms sont loguées une fois affichées à l'écran. Vous pouvez accéder au 'WOLFPACK LOG' à partir du menu carte. Tous les messages sont horodatés et classés par ordre d'apparition." remoteExec ["systemChat",-2,false];
 	waitUntil {sleep 5; time > 600};
 	deleteMarker "mBrief0";
 };
