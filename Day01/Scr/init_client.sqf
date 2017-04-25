@@ -78,17 +78,17 @@ ADF_msg_nikos = {
 
 ADF_fnc_kallazizActive = {
 	sleep 190;
-	["TOC","JSOC TOC","Big Foot: Phoenix, interrogative sitrep. Over."] call ADF_fnc_MessageParser; sleep 11;
+	["TOC","JSOC TOC","Big Foot: Phoenix, demandons CR de situation. Terminé."] call ADF_fnc_MessageParser; sleep 11;
 	private ["_p","_msg"];
 	_p = getPosASL (leader (group player));
-	_msg = format ["Phoenix: Pappa %3. Break.<br/>Position grid Pappa Victor %1 . %2. Over.",round (_p select 0), round (_p select 1), {alive _x} count (allPlayers - entities "HeadlessClient_F")];
+	_msg = format ["Phoenix: Pappa %3. Break.<br/>Position Pappa Victor %1 . %2. Terminé.",round (_p select 0), round (_p select 1), {alive _x} count (allPlayers - entities "HeadlessClient_F")];
 	["WOLF","",_msg] call ADF_fnc_MessageParser; sleep 11;
-	["TOC","JSOC TOC","Big Foot: Copy Phoenix. Out."] call ADF_fnc_MessageParser; sleep 11;
+	["TOC","JSOC TOC","Big Foot: Reçu Phoenix. Terminé."] call ADF_fnc_MessageParser; sleep 11;
 	waitUntil {sleep 2; kallaziz_active};
-	["TOC","JSOC TOC","Big Foot: Phoenix, message over."] call ADF_fnc_MessageParser; sleep 8;
-	["WOLF","","Phoenix: Send message. Over."] call ADF_fnc_MessageParser; sleep 11;
-	["TOC","JSOC TOC","Big Foot: Phoenix, Satnav just picked up a helicopter heading towards the Frini base. Break.</br>This must be the package. Get into position to take him out. How copy?"] call ADF_fnc_MessageParser; sleep 22;
-	["WOLF","","Phoenix: Solid copy. Out."] call ADF_fnc_MessageParser;
+	["TOC","JSOC TOC","Big Foot: Phoenix, message terminé."] call ADF_fnc_MessageParser; sleep 8;
+	["WOLF","","Phoenix: Envoyez message. Terminé."] call ADF_fnc_MessageParser; sleep 11;
+	["TOC","JSOC TOC","Big Foot: Phoenix, Satnav vient juste d.identifier un hélico se dirigeant vers Frini base. Break.</br>Ce doit être le colis. Prenez position pour l'emmener. Parlez"] call ADF_fnc_MessageParser; sleep 22;
+	["WOLF","","Phoenix: Reçu. Terminé."] call ADF_fnc_MessageParser;
 };
 
 ADF_fnc_exfil = {
