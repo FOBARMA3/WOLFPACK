@@ -101,7 +101,7 @@ ADF_fnc_exfil = {
 	if (!alive Kallaziz_1) exitWith {
 		_l = ["tLayer"] call BIS_fnc_rscLayer; 
 		_l cutText ["", "BLACK", 10];
-		["<img size= '10' shadow='false' image='Img\wpintro.paa'/><br/><br/><t size='.7' color='#FFFFFF'>Day 01 | Le Colis</t>",0,0,3,4] spawn BIS_fnc_dynamicText;
+		["<img size= '10' shadow='false' image='Img\wpintro.paa'/><br/><br/><t size='.7' color='#FFFFFF'>JOUR 01 | Le Colis</t>",0,0,3,4] spawn BIS_fnc_dynamicText;
 		sleep 5;
 		['END1',true,5] call BIS_fnc_endMission;
 	};
