@@ -92,8 +92,8 @@ ADF_fnc_kallazizActive = {
 };
 
 ADF_fnc_exfil = {
-	["NONE","Neptune","Phoenix, this is Neptune. We're your ride home. ETA 3 mikes. Over."] call ADF_fnc_MessageParser; sleep 14;
-	["WOLF","","Phoenix: Copy Neptune. Out."] call ADF_fnc_MessageParser;
+	["NONE","Neptune","Phoenix, C´est Neptune. Nous sommes chez vous. ETA 3 mikes. Terminé."] call ADF_fnc_MessageParser; sleep 14;
+	["WOLF","","Phoenix: Reçu Neptune. Terminé."] call ADF_fnc_MessageParser;
 	ADF_endMission = true;
 	
 	waitUntil {sleep 1; wpEnd};
@@ -101,7 +101,7 @@ ADF_fnc_exfil = {
 	if (!alive Kallaziz_1) exitWith {
 		_l = ["tLayer"] call BIS_fnc_rscLayer; 
 		_l cutText ["", "BLACK", 10];
-		["<img size= '10' shadow='false' image='Img\wpintro.paa'/><br/><br/><t size='.7' color='#FFFFFF'>Day 01 | The Package</t>",0,0,3,4] spawn BIS_fnc_dynamicText;
+		["<img size= '10' shadow='false' image='Img\wpintro.paa'/><br/><br/><t size='.7' color='#FFFFFF'>Day 01 | Le Colis</t>",0,0,3,4] spawn BIS_fnc_dynamicText;
 		sleep 5;
 		['END1',true,5] call BIS_fnc_endMission;
 	};
