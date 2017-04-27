@@ -77,7 +77,7 @@ while {(_cnt != 100)} do {
 	ADF_initMsg = format ["
 		<br/>
 		<t align='left' size='1.1' color='#A1A4AD'>Initialisation de la mission: </t>
-		<t size='1.1' align='left' color='#F7D358' font='PuristaBold'>%1&#0037;</t><t size='1.1' align='left' color='#A1A4AD'> done</t><br/><br/>
+		<t size='1.1' align='left' color='#F7D358' font='PuristaBold'>%1&#0037;</t><t size='1.1' align='left' color='#A1A4AD'> fait</t><br/><br/>
 		<t align='left' color='#A1A4AD'>- Evitez de bouger!</t><br/>
 		<t align='left' color='#A1A4AD'>- N'utilisez pas votre radio!</t><br/>
 		<t align='left' color='#A1A4AD'>- Suivez les ordres!</t><br/>
@@ -100,10 +100,10 @@ ADF_postInitMsg = format ["
 	<br/>
 	<t size='1.1' color='#FFFFFF' align='left'>Initialisation complete</t>
 	<t size='1' align='left' color='#A1A4AD'><br/><br/>
-	- Refrain from moving!<br/>
-	- Do not use your radio!<br/>
-	- Follow TL orders<br/>
-	- Init takes approx %1 secs<br/><br/>
+	- Evitez de bouger!<br/>
+	- N'utilisez pas votre radio!<br/>
+	- Suivez les ordres!<br/>
+	- l'initialisation dure environ %1 secs<br/><br/>
 	Tpl: %2  |  Mission: %3</t><br/><br/>
 ",_TimerInput,_ADF_tVersion,_mVersion];
 
