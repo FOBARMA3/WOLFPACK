@@ -76,12 +76,12 @@ while {(_cnt != 100)} do {
 	
 	ADF_initMsg = format ["
 		<br/>
-		<t align='left' size='1.1' color='#A1A4AD'>Mission Initializing: </t>
-		<t size='1.1' align='left' color='#F7D358' font='PuristaBold'>%1&#0037;</t><t size='1.1' align='left' color='#A1A4AD'> done</t><br/><br/>
-		<t align='left' color='#A1A4AD'>- Refrain from moving!</t><br/>
-		<t align='left' color='#A1A4AD'>- Do not use your radio!</t><br/>
-		<t align='left' color='#A1A4AD'>- Follow TL orders</t><br/>
-		<t align='left' color='#A1A4AD'>- Init takes approx %2 secs</t><br/><br/>
+		<t align='left' size='1.1' color='#A1A4AD'>Initialisation de la mission: </t>
+		<t size='1.1' align='left' color='#F7D358' font='PuristaBold'>%1&#0037;</t><t size='1.1' align='left' color='#A1A4AD'> fait</t><br/><br/>
+		<t align='left' color='#A1A4AD'>- Evitez de bouger!</t><br/>
+		<t align='left' color='#A1A4AD'>- N'utilisez pas votre radio!</t><br/>
+		<t align='left' color='#A1A4AD'>- Suivez les ordres!</t><br/>
+		<t align='left' color='#A1A4AD'>- l'initialisation dure environ %2 secs</t><br/><br/>
 		<t align='left' color='#A1A4AD'>Tpl: <t color='#FFFFFF' align='left'>%3</t>  |  Mission: </t><t color='#FFFFFF' align='left'>%4</t><br/>
 	", _cnt,_TimerInput,_ADF_tVersion,_mVersion];
 
@@ -98,19 +98,14 @@ if (isMultiplayer) then {_ADF_unit enableSimulation true;};
 
 ADF_postInitMsg = format ["
 	<br/>
-	<t size='1.1' color='#FFFFFF' align='left'>Mission initializing complete</t>
+	<t size='1.1' color='#FFFFFF' align='left'>Initialisation complete</t>
 	<t size='1' align='left' color='#A1A4AD'><br/><br/>
-	- Refrain from moving!<br/>
-	- Do not use your radio!<br/>
-	- Follow TL orders<br/>
-	- Init takes approx %1 secs<br/><br/>
+	- Evitez de bouger!<br/>
+	- N'utilisez pas votre radio!<br/>
+	- Suivez les ordres!<br/>
+	- l'initialisation dure environ %1 secs<br/><br/>
 	Tpl: %2  |  Mission: %3</t><br/><br/>
 ",_TimerInput,_ADF_tVersion,_mVersion];
-
-If ((_ADF_devBuild == "Alpha") || (_ADF_devBuild == "Beta")) then {
-	ADF_postInitMsg = ADF_postInitMsg + format ["
-		<t align='left' color='#A1A4AD'>Build: %1 | Build version: %2</t><br/>
-	", _ADF_devBuild,_ADF_devBuildNr];
 };
 
 hintSilent parseText ADF_postInitMsg;
