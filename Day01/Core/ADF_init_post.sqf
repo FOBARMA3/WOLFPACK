@@ -77,7 +77,7 @@ while {(_cnt != 100)} do {
 	ADF_initMsg = format ["
 		<br/>
 		<t align='left' size='1.1' color='#A1A4AD'>Initialisation de la mission: </t>
-		<t size='1.1' align='left' color='#F7D358' font='PuristaBold'>%1&#0037;</t><t size='1.1' align='left' color='#A1A4AD'> done</t><br/><br/>
+		<t size='1.1' align='left' color='#F7D358' font='PuristaBold'>%1&#0037;</t><t size='1.1' align='left' color='#A1A4AD'> fait</t><br/><br/>
 		<t align='left' color='#A1A4AD'>- Evitez de bouger!</t><br/>
 		<t align='left' color='#A1A4AD'>- N'utilisez pas votre radio!</t><br/>
 		<t align='left' color='#A1A4AD'>- Suivez les ordres!</t><br/>
