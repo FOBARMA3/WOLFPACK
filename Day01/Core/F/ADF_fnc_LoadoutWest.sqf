@@ -1436,6 +1436,202 @@ ADF_fnc_loadoutAir = {
 	};
 }; // Close ADF_fnc_sAir
 
+/**[  FOB EQUIPEMENT WOLF  ]*********************************************************************/
+ADF_fnc_loadoutFow = {
+
+	/* ID FOB */
+	_dream = "76561198021431479";
+	_krusk = "76561198070259658";
+	_noxx = "76561197996228383";
+	_marsouin = "";
+	_philippe = "";
+	_did = "";
+	_yohann = "";
+	_danys = "";
+	_jack = "76561198015658351";
+	_lolo = "76561198198675218";
+
+	
+	// get player id
+	_uid = getPlayerUID _ADF_unit;
+	
+	// define shared loadout
+	ADF_FOBW_uniform = "rhs_uniform_g3_blk";
+	//ADF_FOBW_headgear = "rhsusf_opscore_bk_pelt";
+	ADF_FOBW_vest = "R3F_veste_ce300";
+	ADF_FOBW_weaponA = "rhs_weap_hk416d10";
+	ADF_FOBW_weaponS = "R3F_HK417L_DES";
+	ADF_FOBW_weaponC = "rhs_weap_hk416d10_m320";
+	ADF_FOBW_2weapon = "R3F_PAMAS";
+	ADF_FOBW_nv = "rhsusf_ANPVS_15";
+	
+	ADF_FOBW_mag = "rhs_mag_30Rnd_556x45_M855A1_Stanag_No_Tracer";
+	
+	// random headgear
+	ADF_FOBW_headgear = ["rhsusf_protech_helmet_rhino","R3F_casqueFS_noir","H_Watchcap_blk","rhsusf_opscore_bk", "rhsusf_opscore_bk_pelt"] call BIS_fnc_selectRandom;
+	
+	// add shared loadout to unit
+	_ADF_unit addUniform ADF_FOBW_uniform;
+	_ADF_unit addHeadgear ADF_FOBW_headgear;
+	_ADF_unit addVest ADF_FOBW_vest;
+	_ADF_unit addWeapon ADF_FOBW_2weapon;
+	_ADF_unit addHandgunItem "muzzle_snds_L";
+	_ADF_unit linkItem ADF_FOBW_nv;
+	
+
+	// primary weapon + ammo
+	if((_r != "cde") && (_r != "tp")) then 
+	{
+		_ADF_unit addMagazine ADF_FOBW_mag;
+		_ADF_unit addWeapon ADF_FOBW_weaponA;
+		
+		_ADF_unit addPrimaryWeaponItem "rhsusf_acc_nt4_black";
+		_ADF_unit addPrimaryWeaponItem "rhsusf_acc_anpeq15side_bk";
+		// base optic
+		_ADF_unit addPrimaryWeaponItem "optic_Hamr";
+		
+		if((_uid == _dream)||(_uid == _lolo)) then
+		{
+			_ADF_unit addPrimaryWeaponItem "SMA_eotech552_3XDOWN";
+		};
+		
+		if((_uid == _marsouin)||(_uid == _jack)) then
+		{
+			_ADF_unit addPrimaryWeaponItem "SMA_eotech552_3XDOWN";
+		};
+		
+		// ammo
+		for "_i" from 1 to 6 do {_ADF_unit addItemToVest ADF_FOBW_mag;};
+	}
+	else
+	{
+		if(_r == "cde") then
+		{
+			_ADF_unit addMagazine ADF_FOBW_mag;
+			_ADF_unit addWeapon ADF_FOBW_weaponC;
+			
+			_ADF_unit addPrimaryWeaponItem "rhsusf_acc_nt4_black";
+			_ADF_unit addPrimaryWeaponItem "rhsusf_acc_anpeq15side_bk";
+			_ADF_unit addPrimaryWeaponItem "SMA_eotech552_3XDOWN";
+			
+			// ammo
+			for "_i" from 1 to 6 do {_ADF_unit addItemToVest ADF_FOBW_mag;};
+		}
+		else // TP
+		{
+			_ADF_unit addMagazine "R3F_20Rnd_762x51_HK417";
+			_ADF_unit addWeapon ADF_FOBW_weaponS;
+			
+			_ADF_unit addPrimaryWeaponItem "R3F_SILENCIEUX_HK417_DES";
+			_ADF_unit addPrimaryWeaponItem "R3F_POINTEUR_SURB";
+			_ADF_unit addPrimaryWeaponItem "optic_AMS";
+			_ADF_unit addPrimaryWeaponItem "R3F_BIPIED_HK417_DES";
+			
+			// ammo
+			for "_i" from 1 to 6 do {_ADF_unit addItemToVest "R3F_20Rnd_762x51_HK417";};
+		};
+		
+		// binoculars
+		_ADF_unit addWeapon "R3F_JIM_LR_DES";
+	};
+	
+	
+	// AT
+	if(_r == "at") then
+	{
+		_ADF_unit addWeapon "ffaa_armas_c90";
+	};
+	
+	// ADD TO UNIFORM
+	// Personal Radios all units
+	if (ADF_mod_TFAR) then {_ADF_unit linkItem _ADF_TFAR_SWRadio}; // TFAR
+	// microDAGR
+	if (ADF_microDAGR_all == 1) then {_ADF_unit addItemToUniform ADF_microDAGR};	
+	// ACE3
+	if (ADF_mod_ACE3) then {
+		_ADF_unit addItemToUniform "ACE_EarPlugs";
+		_ADF_unit addItemToUniform "ACE_CableTie";
+		_ADF_unit addItemToUniform "ACE_IR_Strobe_Item";
+		_ADF_unit addItemToUniform "ACE_Flashlight_XL50";
+	};
+	
+	// cTab
+	if (ADF_mod_CTAB) then {_ADF_unit addItemToUniform "ItemcTabHCam"};	
+	// GPS
+	_ADF_unit linkItem "ItemGPS";
+	
+	_ADF_unit addItemToUniform "Chemlight_green";
+	_ADF_unit addItemToUniform "Chemlight_red";
+	
+	if(_r == "tp") then
+	{
+		_ADF_unit addItemToUniform "optic_NVS";
+	};
+	
+	// ADD TO VEST
+	for "_i" from 1 to 2 do {_ADF_unit addItemToVest "rhs_mag_m67";};
+	for "_i" from 1 to 2 do {_ADF_unit addItemToVest "SmokeShell";};
+	_ADF_unit addItemToVest "SmokeShellBlue";
+	_ADF_unit addItemToVest "SmokeShellGreen";
+	_ADF_unit addItemToVest "SmokeShellRed";
+	
+	if (ADF_mod_ACE3) then {
+		for "_i" from 1 to 10 do {			
+			_ADF_unit addItemToVest "ACE_fieldDressing";
+			_ADF_unit addItemToVest "ACE_morphine";				
+		};			
+	};
+	
+	// ADD TO BACKPACK
+	if(_r == "cde") then
+	{
+		_ADF_unit addBackpack "tf_rt1523g_black";
+		_ADF_unit addItemToBackpack "ACE_HuntIR_monitor";
+		for "_i" from 1 to 2 do {_ADF_unit addItemToBackpack "ACE_HuntIR_M203";};
+	};
+	
+	if(_r == "eod") then
+	{
+		_ADF_unit addBackpack "R3F_sac_petit_noir";
+		_ADF_unit addItemToBackpack "ACE_DefusalKit";
+		for "_i" from 1 to 2 do {_ADF_unit addItemToBackpack "ACE_Clacker";};
+		for "_i" from 1 to 2 do {_ADF_unit addItemToBackpack "DemoCharge_Remote_Mag";};
+		for "_i" from 1 to 2 do {_ADF_unit addItemToBackpack "ClaymoreDirectionalMine_Remote_Mag";};
+	};
+	
+	if(_r == "med") then
+	{
+		_ADF_unit addBackpack "R3F_sac_moyen_medic_noir";
+		for "_i" from 1 to 15 do 
+		{
+			_ADF_unit addItemToBackpack "ACE_fieldDressing";
+			_ADF_unit addItemToBackpack "ACE_morphine";
+			_ADF_unit addItemToBackpack "ACE_bloodIV_500";
+			_ADF_unit addItemToBackpack "ACE_epinephrine";
+		}
+	};
+	
+	if(_r == "uav") then
+	{
+		_ADF_unit addBackpack "B_UAV_01_backpack_F";
+		_ADF_unit linkItem "B_UavTerminal";
+	};
+	
+	// finish load
+	_ADF_unit selectWeapon (primaryWeapon _ADF_unit);
+	//if (ADF_mod_ACE3) then {[_ADF_unit, currentWeapon _ADF_unit, currentMuzzle _ADF_unit] call ACE_SafeMode_fnc_lockSafety;};
+	if (ADF_Clan_uniformInsignia) then {[_ADF_unit,"CLANPATCH"] call BIS_fnc_setUnitInsignia};
+	ADF_gearLoaded = true;
+	_ADF_perfDiagStop = diag_tickTime;
+	if (ADF_debug) then {
+		_debugDiag = format [" (DIAG: %1)",_ADF_perfDiagStop - _ADF_perfDiagStart];
+		_debugText = "LOADOUT - SOP units loadout applied.";
+		_debugMsg = _debugText + _debugDiag;
+		[_debugMsg,false] call ADF_fnc_log;
+	};	
+};
+
+
 /////  Undefined player
 ADF_fnc_loadoutNotDef = {
 	_ADF_unit = _this select 0;
