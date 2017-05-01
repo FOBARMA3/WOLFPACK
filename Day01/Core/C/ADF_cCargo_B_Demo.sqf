@@ -49,7 +49,8 @@ if (ADF_mod_ACE3) then {
 	_crate addItemCargoGlobal ["ACE_M26_Clacker",_itm];
 	_crate addItemCargoGlobal ["ACE_DeadManSwitch",_itm];
 	_crate addItemCargoGlobal ["ACE_DefusalKit",_itm];
-	_crate addItemCargoGlobal ["ACE_wirecutter",_itm];	
+	_crate addItemCargoGlobal ["ACE_wirecutter",_itm];
+	_crate addItemCargoGlobal ["ACE_VMH3",_itm];
 };
 
 
