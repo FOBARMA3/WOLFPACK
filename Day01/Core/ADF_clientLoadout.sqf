@@ -95,7 +95,8 @@ if ((_ADF_unitFaction == "BLU_F") && _ADF_customLoadout_MOD) exitWith { // BLUFO
 		(toString _ADF_unitCheck != "sop") &&	
 		(toString _ADF_unitCheck != "cav") &&
 		(toString _ADF_unitCheck != "air") &&
-		(toString _ADF_unitCheck != "dev")
+		(toString _ADF_unitCheck != "dev") &&
+		(toString _ADF_unitCheck != "fow")
 	) exitWith {
 		[_ADF_unit] call ADF_fnc_loadoutNotDef; // Undefined unit > load standard infantry gear
 	}; 
@@ -158,6 +159,7 @@ if ((_ADF_unitFaction == "BLU_F") && _ADF_customLoadout_MOD) exitWith { // BLUFO
 	if (_s == "sor") exitWith {[_s,_r] call ADF_fnc_loadoutSor}; // SpecOp/Recon Squadron
 	if (_s == "sod") exitWith {[_s,_r] call ADF_fnc_loadoutSod}; // Divers
 	if (_s == "sop") exitWith {[_s,_r] call ADF_fnc_loadoutSop}; // Snipers/JTAC
+	if (_s == "fow") exitWith {[_s,_r] call ADF_fnc_loadoutFow}; // FOB WOLFPACK
 	if (_s == "dev") exitWith {								 // Mission Developer
 		_ADF_unit addVest "V_Rangemaster_belt";
 		_ADF_unit unassignItem "NVGoggles";
