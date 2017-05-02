@@ -1497,7 +1497,7 @@ ADF_fnc_loadoutFow = {
 
 		if((_uid == _marsouin)||(_uid == _jack)) then
 		{
-			_ADF_unit addPrimaryWeaponItem "optic_AMS";
+			_ADF_unit addPrimaryWeaponItem "optic_Hamr";
 		};
 
 		// ammo
@@ -1512,7 +1512,18 @@ ADF_fnc_loadoutFow = {
 
 			_ADF_unit addPrimaryWeaponItem "rhsusf_acc_nt4_black";
 			_ADF_unit addPrimaryWeaponItem "rhsusf_acc_anpeq15side_bk";
-			_ADF_unit addPrimaryWeaponItem "SMA_eotech552_3XDOWN";
+			// base optic
+			_ADF_unit addPrimaryWeaponItem "optic_Hamr";
+
+			if((_uid == _dream)||(_uid == _lolo)) then
+			{
+				_ADF_unit addPrimaryWeaponItem "SMA_eotech552_3XDOWN";
+			};
+
+			if((_uid == _marsouin)||(_uid == _jack)) then
+			{
+				_ADF_unit addPrimaryWeaponItem "optic_Hamr";
+			};
 
 			// ammo
 			for "_i" from 1 to 6 do {_ADF_unit addItemToVest ADF_FOBW_mag;};
