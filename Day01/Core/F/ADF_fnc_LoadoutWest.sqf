@@ -1598,6 +1598,13 @@ ADF_fnc_loadoutFow = {
 	};
 
 	// ADD TO BACKPACK
+	if(_r == "gv") then
+	{
+		_ADF_unit addBackpack "R3F_sac_petit_noir";
+		for "_i" from 1 to 15 do {_ADF_unit addItemToBackpack "ADF_FOBW_mag";};
+	};
+	
+	
 	if(_r == "cde") then
 	{
 		_ADF_unit addBackpack "tf_rt1523g_black";
